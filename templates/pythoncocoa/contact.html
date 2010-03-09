@@ -1,0 +1,21 @@
+{% extends "ext_base.html" %}
+{% load cms_tags %}
+
+{% block title %}Contacto{% endblock %}
+
+<div id="main-content">
+	{% block contents %}{{ block.super }}
+
+	<div id="main-content-left">
+	 	
+		<h1 id="contact-us">Contact Us</h1>      
+ 		{% placeholder "body" %}
+    	     
+    </div>
+    
+    <div id="main-content-right">
+	    {% include "include/sidebar-contact.html" %}
+    </div>
+
+	{% endblock %}
+</div>

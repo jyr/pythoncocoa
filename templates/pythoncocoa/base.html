@@ -1,0 +1,110 @@
+{% load cache cms_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="{% page_attribute meta_description %}"/>
+<meta name="keywords" content="{% page_attribute meta_keywords %}"/>
+<link type="text/css" rel="stylesheet" href="/media/css/template/reset.css" />
+<link type="text/css" rel="stylesheet" href="/media/css/template/style.css" />
+<link type="text/css" rel="stylesheet" href="/media/css/template/slider.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+<script src="/media/js/template/jquery.easing.1.2.js" type="text/javascript"></script>
+<script src="/media/js/template/jquery.anythingslider.js" type="text/javascript"></script>
+<title>{% page_attribute page_title %}</title>
+<script type="text/javascript">
+    
+        function formatText(index, panel) {
+		  return index + "";
+	    }
+    
+        $(function () {
+        
+            $('.anythingSlider').anythingSlider({
+                easing: "easeInOutExpo",        // Anything other than "linear" or "swing" requires the easing plugin
+                autoPlay: false,                 // This turns off the entire FUNCTIONALY, not just if it starts running or not.
+                delay: 3000,                    // How long between slide transitions in AutoPlay mode
+                startStopped: false,            // If autoPlay is on, this can force it to start stopped
+                animationTime: 600,             // How long the slide transition takes
+                hashTags: true,                 // Should links change the hashtag in the URL?
+                buildNavigation: true,          // If true, builds and list of anchor links to link to each slide
+        		pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
+		        navigationFormatter: formatText       // Details at the top of the file on this use (advanced use)
+            });
+            
+            $("#slide-jump").click(function(){
+                $('.anythingSlider').anythingSlider(6);
+            });
+            
+        });
+</script>
+
+</head>
+<body>
+
+<!--Begin Page Wrap-->
+
+<div id="page-wrap">
+
+<!--Being Header-->
+
+	<div id="header">
+    
+    	<a href="/"><img id="logo" src="/media/img/template/header-logo.png" alt="DM" /></a>
+        	
+          <ul id="main-nav">
+              <li><a href="/" class="current">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="http://blog.pythoncocoa.com">Blog</a></li>
+              <!--li><a href="/contact">Contact</a></li-->
+          </ul>
+    
+    </div>
+
+<!--End Header-->
+<!--Being Slider Box-->
+
+	 <div class="anythingSlider">
+     	<div class="wrapper">
+              <ul>            	
+                <li><img src="/media/img/template/slide-box-1.jpg" alt="Slide Box 1" /></li>
+                <li><img src="/media/img/template/slide-box-2.jpg" alt="Slide Box 1" /></li>
+              </ul>
+        </div>
+     </div>	
+
+<!--End Slider Box-->   
+<!--Being Main Content-->
+    
+	{% block contentwrapper %}
+    	
+	{% endblock %}
+
+<!--End Main Content-->    
+    
+    <img class="horizontal-divider" src="/media/img/template/horizontal-divider.png" alt="" />
+    
+<!--Begin Footer-->
+    <div id="footer">
+	{# include "include/footer.html" #}
+	
+	  <div id="bottom-menu">
+	  	<a href="index.html"><img id="bottom-logo" src="/media/img/template/footer-logo.png" alt="DM" /></a>
+	      	<ul id="footer-nav">
+	          	<li><a href="/">Home</a></li>
+	          	<li><a href="/about">About</a></li>
+	          	<li><a href="/blog">Blog</a></li>
+	          	<!--li><a href="contact">Contact</a></li-->
+	  		</ul>
+	  </div>
+
+	</div>
+ 
+<!--End Footer-->    
+
+</div>
+
+<!--End Page Wrap-->
+
+</body>
+</html>

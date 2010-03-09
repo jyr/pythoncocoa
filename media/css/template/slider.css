@@ -1,0 +1,96 @@
+
+.anythingSlider {
+	width: 820px;
+	height: 250px;
+	position: relative;
+	margin: 30px 0;
+}
+.anythingSlider .wrapper {
+	width: 820px;
+	overflow: auto;
+	height: 250px;
+	margin: 0 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.anythingSlider .wrapper ul {
+	width: 99999px;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+}
+.anythingSlider ul li {
+	display: block;
+	float: left;
+	padding: 0;
+	height: 250px;
+	width: 820px;
+	margin: 0;
+}
+.anythingSlider .arrow {
+	display: block;
+	height: 240px;
+	width: 67px;
+	background: url(/media/img/template/arrows.png) no-repeat 0 0;
+	text-indent: -9999px;
+	position: absolute;
+	top: 140px;
+	cursor: pointer;
+}
+.anythingSlider .forward {
+	background-position: 0 0;
+	right: -35px;
+}
+.anythingSlider .back {
+	background-position: -67px 0;
+	left: -35px;
+}
+.anythingSlider .forward:hover {
+	background-position: 0 0;
+}
+.anythingSlider .back:hover {
+	background-position: -67px 0;
+}
+
+#start-stop {
+	background: green;
+	background-image: url(/media/img/template/cellshade.png);
+	background-repeat: repeat-x;
+	color: white;
+	padding: 2px 5px;
+	width: 40px;
+	text-align: center;
+	position: absolute;
+	right: 45px;
+	top: 323px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+}
+#start-stop.playing {
+	background-color: red;
+}
+#start-stop:hover {
+	background-image: none;
+}
+/*
+  Prevents
+*/
+.anythingSlider .wrapper ul ul {
+	position: static;
+	margin: 0;
+	background: none;
+	overflow: visible;
+	width: auto;
+	border: 0;
+}
+.anythingSlider .wrapper ul ul li {
+	float: none;
+	height: auto;
+	width: auto;
+	background: none;
+}

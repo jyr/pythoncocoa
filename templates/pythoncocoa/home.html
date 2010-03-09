@@ -1,0 +1,21 @@
+{% extends "ext_base.html" %}
+{% load cms_tags %}
+
+{% block title %}Inicio{% endblock %}
+
+<div id="main-content">
+	{% block contents %}{{ block.super }}
+
+	<div id="main-content-left">
+    	<h1 id="we-make-dreams">We Make Dreams Come True</h1>
+        	{% placeholder "body" %}
+      	<h1 id="ready-to-get">Ready to Get Started?</h1>       
+    	     
+    </div>
+    
+    <div id="main-content-right">
+	    {% include "include/sidebar-home.html" %}
+    </div>
+
+	{% endblock %}
+</div>
